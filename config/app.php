@@ -178,6 +178,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
+        \Safaricom\Mpesa\MpesaServiceProvider::class
 
     ],
 
@@ -194,6 +195,8 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // ...
+
+        'Mpesa'=> \Safaricom\Mpesa\MpesaServiceProvider::class
     ])->toArray(),
 
 ];
