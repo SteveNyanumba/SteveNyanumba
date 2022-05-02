@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('invoice_id');
+            $table->foreignId('payment_method_id');
+            $table->unsignedFloat('amount_kes');
             $table->timestamps();
         });
     }

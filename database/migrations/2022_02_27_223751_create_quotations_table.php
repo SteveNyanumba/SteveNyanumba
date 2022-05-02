@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('quotations', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
+            $table->foreignId('client_id');
+            $table->string('title');
+            $table->longText('description');
+            $table->unsignedFloat('cost_kes');
             $table->timestamps();
         });
     }

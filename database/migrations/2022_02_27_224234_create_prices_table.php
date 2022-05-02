@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('prices', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('service_id');
+            $table->string('title');
+            $table->longText('description');
+            $table->unsignedFloat('price');
             $table->timestamps();
         });
     }
