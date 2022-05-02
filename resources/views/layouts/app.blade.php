@@ -66,7 +66,13 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script>
         // if (localStorage.getItem("color"))
-        //     $("#color").attr("href", "../assets/css/" + localStorage.getItem("color") + ".css");
+        //     $("#color").attr("href", "../assets/css/" + localStorage.getItem("color") + ".css");\
+        if (localStorage.getItem('body') == null) {
+            localStorage.setItem('body', 'light-only');
+        }
+        if (!(localStorage.getItem('body') == 'light-only' || localStorage.getItem('body') == 'dark-only' || localStorage.getItem('body') == 'dark-sidebar')) {
+            localStorage.setItem('body', 'light-only');
+        }
         if (localStorage.getItem('body') == 'dark-only') {
             $("body").addClass('dark-only')
             $("body").removeClass('dark-sidebar')
